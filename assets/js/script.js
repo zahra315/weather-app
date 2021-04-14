@@ -55,3 +55,28 @@ var currentWeather = (event) => {
 }
 
 
+
+//save the city to localStorage
+var storeCityInfo = (newCity) => {
+    let cityExists = false;
+    // Check if City exists in local storage
+    for (let i = 0; i < localStorage.length; i++) {
+        if (localStorage["cities" + i] === newCity) {
+            cityExists = true;
+            break;
+        }
+    }
+    if (cityExists === false) {
+        localStorage.setItem('cities' + localStorage.length, newCity);
+    }
+}
+
+
+
+// New city search listener
+$('#search-button').on("click", (event) => {
+    event.preventDefault();
+    currentCity = $('#cityName').val();
+    currentWeather(event);
+    });
+    
