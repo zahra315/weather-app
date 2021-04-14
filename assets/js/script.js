@@ -138,3 +138,10 @@ $('#search-button').on("click", (event) => {
     currentWeather(event);
     });
     
+// previous searched listener
+$('#listOfCities').on("click", (event) => {
+    event.preventDefault();
+    $('#cityName').val(event.target.textContent);
+    currentCity=$('#cityName').val();
+    currentWeather(event);
+});
