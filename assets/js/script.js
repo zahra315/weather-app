@@ -71,7 +71,23 @@ var storeCityInfo = (newCity) => {
     }
 }
 
+//list of searched cities
+var displayCities = () => {
+    $('#listOfCities').empty();
+    
+    if (localStorage.length===0){
+        $('#cityName').attr("value", "City!");
+    } else {
+        for (let i = 0; i < localStorage.length; i++) {
+            let city = localStorage.getItem("cities" + i);
+            let cityEl = `<button type="button" class="list-group-item list-group-item-action">${city}</button></li>`;
 
+            $('#listOfCities').prepend(cityEl);
+        }
+        
+    }
+    
+}
 
 // New city search listener
 $('#search-button').on("click", (event) => {
