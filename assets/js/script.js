@@ -41,7 +41,7 @@ var currentWeather = (event) => {
             return response.json();
         })
         .then((response) => {
-            let uvIndex = response.value;
+            let uvIndex = response.current.uvi;
             $('#uvIndex').html(`UV Index: <span id="uvVal"> ${uvIndex}</span>`);
             if (uvIndex>=0 && uvIndex<3){
                 $('#uvVal').attr("class", "uv-favorable");
