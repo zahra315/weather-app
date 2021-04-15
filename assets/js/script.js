@@ -83,7 +83,7 @@ var fiveDayForecast = (event) => {
                 fiveDayForecastHTML += `
                 <div class="weather-card card m-2 p0 bg-primary text-white">
                     <ul class="list-unstyled p-3">
-                        <li>${thisMoment.format("MM/DD/YY")}</li>
+                        <li>${thisMoment.add(1).format("MM/DD/YY")}</li>
                         <li class="weather-icon"><img src="${iconURL}"></li>
                         <li>Temp: ${dayData.main.temp}°F</li>
                         <br>
