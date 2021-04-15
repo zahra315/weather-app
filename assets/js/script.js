@@ -3,7 +3,7 @@ var currentCity = "";
 var previousCity = "";
 
 
-//display the current Weather 
+//display the current Weather **********
 var currentWeather = (event) => {
     let city = $('#cityName').val();
     currentCity= $('#cityName').val();
@@ -54,7 +54,7 @@ var currentWeather = (event) => {
     })
 }
 
-//five day forecast and display to HTML
+//five day forecast and display to HTML **********
 var fiveDayForecast = (event) => {
     let city = $('#cityName').val();
    
@@ -98,7 +98,7 @@ var fiveDayForecast = (event) => {
 }
 
 
-//save the city to localStorage
+//save the city to localStorage **********
 var storeCityInfo = (newCity) => {
     let cityExists = false;
     // Check if City exists in local storage
@@ -113,7 +113,7 @@ var storeCityInfo = (newCity) => {
     }
 }
 
-//list of searched cities
+//list of searched cities **********
 var displayCities = () => {
     $('#listOfCities').empty();
     
@@ -131,14 +131,14 @@ var displayCities = () => {
     
 }
 
-// New city search listener
+// New city search listener **********
 $('#search-button').on("click", (event) => {
     event.preventDefault();
     currentCity = $('#cityName').val();
     currentWeather(event);
     });
     
-// previous searched listener
+// previous searched listener **********
 $('#listOfCities').on("click", (event) => {
     event.preventDefault();
     $('#cityName').val(event.target.textContent);
